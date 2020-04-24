@@ -25,7 +25,7 @@ function App() {
     axios.get(`${youtubeURL}videos?key=${youtubeKey}&id=${videoId}&part=player&maxResults=1`).then(response => {
       setSelectedMode(response.data.items[0].player.embedHtml);
     })
-    
+
     axios.get(`${youtubeURL}search?key=${youtubeKey}&relatedToVideoId=${videoId}&part=snippet&maxResults=20&type=video`).then(response => {
       setRelatedVideos(response.data.items);
     })
@@ -37,22 +37,26 @@ function App() {
 
   const watchingMode = (
     <div className={classes.App}>
-      <WatchComponent player={selectedMode} goBack={goBackHandler}/>
-      <ResultsComponent results={relatedVideos} selectVideo={selectVideoHandler}/>
+      <img className={classes.Image}
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/502px-Logo_of_YouTube_%282015-2017%29.svg.png"
+        alt="Logo" ></img>      <WatchComponent player={selectedMode} goBack={goBackHandler} />
+      <ResultsComponent results={relatedVideos} selectVideo={selectVideoHandler} />
     </div>
   );
 
   const searchingMode = (
     <div className={classes.App}>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/502px-Logo_of_YouTube_%282015-2017%29.svg.png"></img>
-      <SearchComponent search={searchHandler}/>
-      <ResultsComponent results={searchResults} selectVideo={selectVideoHandler}/>
+      <img className={classes.Image}
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/502px-Logo_of_YouTube_%282015-2017%29.svg.png"
+        alt="Logo" ></img>
+      <SearchComponent search={searchHandler} />
+      <ResultsComponent results={searchResults} selectVideo={selectVideoHandler} />
     </div>
   );
 
   return (
     selectedMode ? watchingMode : searchingMode
-    );
+  );
 
 }
 
