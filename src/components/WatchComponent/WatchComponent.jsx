@@ -8,8 +8,9 @@ const watchComponent = (props) => {
         result = (
             <div className={classes.WatchComponent}>
                 <img className={classes.GoBack} 
-                src="https://i7.pngguru.com/preview/573/389/121/organization-human-back-building-back.jpg" 
-                alt="Go back" 
+                src="https://i.ibb.co/TgB7TCL/arrowmodified.png"  //Imagen creada por mí ;)
+                alt="arrowmodified" 
+                border="0"
                 onClick={() => props.goBack()}
                 />
                 <div dangerouslySetInnerHTML={ {__html:  props.player ? props.player : ""}}/>

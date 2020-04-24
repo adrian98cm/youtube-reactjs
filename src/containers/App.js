@@ -15,13 +15,13 @@ function App() {
   const youtubeKey = "AIzaSyDButXXf-iXzdBZmBYWcpALaVBQfC6mtc0";
   const youtubeURL = "https://www.googleapis.com/youtube/v3/";
 
-  const searchHandler = (inputId) => {
+  const search = (inputId) => {
     axios.get(`${youtubeURL}search?key=${youtubeKey}&q=${document.getElementById(inputId).value}&part=snippet&type=video&maxResults=20`).then(response => {
       setSearchResults(response.data.items);
     })
   };
 
-  const selectVideoHandler = (videoId) => {
+  const selectVideo = (videoId) => {
     axios.get(`${youtubeURL}videos?key=${youtubeKey}&id=${videoId}&part=player&maxResults=1`).then(response => {
       setSelectedMode(response.data.items[0].player.embedHtml);
     })
@@ -31,7 +31,7 @@ function App() {
     })
   }
 
-  const goBackHandler = () => {
+  const goBack = () => {
     setSelectedMode(undefined);
   }
 
@@ -39,8 +39,9 @@ function App() {
     <div className={classes.App}>
       <img className={classes.Image}
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/502px-Logo_of_YouTube_%282015-2017%29.svg.png"
-        alt="Logo" ></img>      <WatchComponent player={selectedMode} goBack={goBackHandler} />
-      <ResultsComponent results={relatedVideos} selectVideo={selectVideoHandler} />
+        alt="Logo" ></img>
+      <WatchComponent player={selectedMode} goBack={goBack} />
+      <ResultsComponent results={relatedVideos} selectVideo={selectVideo} />
     </div>
   );
 
@@ -49,8 +50,8 @@ function App() {
       <img className={classes.Image}
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/502px-Logo_of_YouTube_%282015-2017%29.svg.png"
         alt="Logo" ></img>
-      <SearchComponent search={searchHandler} />
-      <ResultsComponent results={searchResults} selectVideo={selectVideoHandler} />
+      <SearchComponent search={search} />
+      <ResultsComponent results={searchResults} selectVideo={selectVideo} />
     </div>
   );
 
