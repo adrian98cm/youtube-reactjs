@@ -1,0 +1,51 @@
+.ResultComponent {
+    /* display: flex;
+    flex-direction: row;
+    width: 70%;
+    min-height: 100px;
+    max-height: fit-content;
+    margin-bottom: 30px;
+    cursor: pointer;
+    border: 2px solid rgb(61, 61, 61);
+    border-radius: 25px;
+    box-shadow:0 2px 3px grey; */
+
+    display: flex;
+    flex-direction: row;
+
+    width: 60%;
+    margin: 16px auto;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    padding: 16px;
+    text-align: center;
+
+}
+
+.ResultImage {
+    display: flex;
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    margin: 5px;
+    border-radius: 20px;
+    box-shadow:0 2px 3px grey;
+
+}
+
+.ResultInfo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    width: 70%;
+}
+
+.ResultTitle {
+    display: flex;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.ResultDescription {
+    display: flex;
+}

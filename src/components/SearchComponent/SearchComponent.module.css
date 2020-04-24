@@ -1,0 +1,52 @@
+.SearchComponent {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+.SearchInput {
+    display: flex;
+    width: 300px;
+    height: 25px;
+    margin-right: 10px;
+     /*border: 2px solid rgb(61, 61, 61);
+    
+    border-radius: 25px;
+    box-shadow:0 2px 3px grey; */
+
+    border-radius: 15px;
+    
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+     /* display: flex;
+     width: 300px;
+     height: 25px;
+     margin: 16px auto;
+     border: 1px solid #eee;
+     box-shadow: 0 2px 3px #ccc;
+      */
+}
+
+.SearchButton {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 15px; 
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+
+}
+
+.SearchButton:hover {
+    border-radius: 1px solid rgb(22, 110, 0);
+    background-color: rgb(123, 255, 163);
+}
+
+.SearchButton:active {
+    color:rgb(59, 58, 58);
+    background-color: rgb(123, 255, 163);
+}
